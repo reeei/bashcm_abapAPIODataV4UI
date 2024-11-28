@@ -1,0 +1,118 @@
+{
+    "_version": "1.65.0",
+    "sap.app": {
+        "id": "jeuplv4ui.journalentryuploadodatav4ui",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "0.0.1"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "resources": "resources.json",
+        "sourceTemplate": {
+            "id": "@sap/generator-fiori:basic",
+            "version": "1.15.6",
+            "toolsId": "6d6975ed-a660-4d95-9977-a05beb3986f4"
+        },
+        "dataSources": {
+            "mainService": {
+                "uri": "/sap/opu/odata4/sap/zui_c_journalentry/srvd/sap/zui_c_journalentry/0001/",
+                "type": "OData",
+                "settings": {
+                    "annotations": [],
+                    "localUri": "localService/metadata.xml",
+                    "odataVersion": "4.0"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": true,
+        "dependencies": {
+            "minUI5Version": "1.127.5",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "jeuplv4ui.journalentryuploadodatav4ui.i18n.i18n"
+                }
+            },
+            "": {
+                "dataSource": "mainService",
+                "preload": true,
+                "settings": {
+                    "operationMode": "Server",
+                    "autoExpandSelect": true,
+                    "earlyRequests": true,
+                    "groupId": "$direct"
+                }
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "controlAggregation": "pages",
+                "controlId": "app",
+                "transition": "slide",
+                "type": "View",
+                "viewType": "XML",
+                "path": "jeuplv4ui.journalentryuploadodatav4ui.view",
+                "async": true,
+                "viewPath": "jeuplv4ui.journalentryuploadodatav4ui.view"
+            },
+            "routes": [
+                {
+                    "name": "RouteMainview",
+                    "pattern": ":?query:",
+                    "target": [
+                        "TargetMainview"
+                    ]
+                }
+            ],
+            "targets": {
+                "TargetMainview": {
+                    "id": "Mainview",
+                    "name": "Mainview"
+                }
+            }
+        },
+        "rootView": {
+            "viewName": "jeuplv4ui.journalentryuploadodatav4ui.view.App",
+            "type": "XML",
+            "id": "App"
+        }
+    }
+}

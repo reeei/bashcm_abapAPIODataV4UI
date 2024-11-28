@@ -1,0 +1,1355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="SAP__common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="SAP__measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CORE',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Core.V1" Alias="SAP__core"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="SAP__capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="SAP__aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="SAP__validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="SAP__UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HTML5',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.HTML5.v1" Alias="SAP__HTML5"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PDF',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PDF.v1" Alias="SAP__PDF"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_SESSION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Session.v1" Alias="SAP__session"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ODM',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.ODM.v1" Alias="SAP__ODM"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HIERARCHY',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Hierarchy.v1" Alias="SAP__hierarchy"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="com.sap.gateway.srvd.zui_c_journalentry.v0001" Alias="SAP__self">
+            <Annotation Term="SAP__core.SchemaVersion" String="1.0.0"/>
+            <EntityType Name="ZC_JournalEntryType">
+                <Key>
+                    <PropertyRef Name="Uuid"/>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="Uuid" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="companycode" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="accountingdocument" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="documentreferenceid" Type="Edm.String" Nullable="false" MaxLength="16"/>
+                <Property Name="postingfiscalperiod" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="accountingdocumenttype" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="ledgergroup" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="documentheadertext" Type="Edm.String" Nullable="false" MaxLength="25"/>
+                <Property Name="documentdate" Type="Edm.Date"/>
+                <Property Name="postingdate" Type="Edm.Date"/>
+                <Property Name="exchangeratedate" Type="Edm.Date"/>
+                <Property Name="exchangerate" Type="Edm.Decimal" Nullable="false" Precision="9" Scale="5"/>
+                <Property Name="currencycode" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="Created_By" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="Created_At" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="Last_Changed_By" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="Last_Changed_At" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="Local_Last_Changed_At" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="DraftEntityCreationDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="DraftEntityLastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="__CreateByAssociationControl" Type="com.sap.gateway.srvd.zui_c_journalentry.v0001.ZC_JournalEntryCbAControl"/>
+                <Property Name="__OperationControl" Type="com.sap.gateway.srvd.zui_c_journalentry.v0001.ZC_JournalEntryOperationControl"/>
+                <Property Name="SAP__Messages" Type="Collection(com.sap.gateway.srvd.zui_c_journalentry.v0001.SAP__Message)" Nullable="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Type="com.sap.gateway.srvd.zui_c_journalentry.v0001.I_DraftAdministrativeDataType"/>
+                <NavigationProperty Name="SiblingEntity" Type="com.sap.gateway.srvd.zui_c_journalentry.v0001.ZC_JournalEntryType"/>
+                <NavigationProperty Name="_Item" Type="Collection(com.sap.gateway.srvd.zui_c_journalentry.v0001.ZC_JournalEntryItemType)" Partner="_Header">
+                    <OnDelete Action="Cascade"/>
+                </NavigationProperty>
+            </EntityType>
+            <EntityType Name="I_DraftAdministrativeDataType">
+                <Key>
+                    <PropertyRef Name="DraftUUID"/>
+                    <PropertyRef Name="DraftEntityType"/>
+                </Key>
+                <Property Name="DraftUUID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="DraftEntityType" Type="Edm.String" Nullable="false" MaxLength="30"/>
+                <Property Name="CreationDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="CreatedByUser" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="LastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="LastChangedByUser" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="DraftAccessType" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="ProcessingStartDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="InProcessByUser" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="DraftIsKeptByUser" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="EnqueueStartDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="DraftIsCreatedByMe" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="DraftIsLastChangedByMe" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="DraftIsProcessedByMe" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="CreatedByUserDescription" Type="Edm.String" Nullable="false" MaxLength="80"/>
+                <Property Name="LastChangedByUserDescription" Type="Edm.String" Nullable="false" MaxLength="80"/>
+                <Property Name="InProcessByUserDescription" Type="Edm.String" Nullable="false" MaxLength="80"/>
+            </EntityType>
+            <EntityType Name="ZC_JournalEntryItemType">
+                <Key>
+                    <PropertyRef Name="Uuid"/>
+                    <PropertyRef Name="referencedocumentitem"/>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="Uuid" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="referencedocumentitem" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="glaccount" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="amountintransactioncurrency" Type="Edm.Decimal" Nullable="false" Precision="23" Scale="variable"/>
+                <Property Name="taxamount" Type="Edm.Decimal" Nullable="false" Precision="23" Scale="variable"/>
+                <Property Name="currencyCode" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="documentitemtext" Type="Edm.String" Nullable="false" MaxLength="50"/>
+                <Property Name="assignmentreference" Type="Edm.String" Nullable="false" MaxLength="18"/>
+                <Property Name="taxcode" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="valuedate" Type="Edm.Date"/>
+                <Property Name="costcenter" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="profitcenter" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="wbselement" Type="Edm.String" Nullable="false" MaxLength="24"/>
+                <Property Name="orderid" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="segment" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="functionalarea" Type="Edm.String" Nullable="false" MaxLength="16"/>
+                <Property Name="personnelnumber" Type="Edm.String" Nullable="false" MaxLength="8"/>
+                <Property Name="housebank" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="housebankaccount" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="reference1idbybusinesspartner" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="reference2idbybusinesspartner" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="reference3idbybusinesspartner" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="customer_copa" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="customergroup_copa" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="customerindustry_copa" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="customercountry_copa" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="salesdistrict_copa" Type="Edm.String" Nullable="false" MaxLength="6"/>
+                <Property Name="soldmaterial_copa" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="soldmaterialgroup_copa" Type="Edm.String" Nullable="false" MaxLength="9"/>
+                <Property Name="salesorganization_copa" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="distributionchannel_copa" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="wbselement_copa" Type="Edm.String" Nullable="false" MaxLength="24"/>
+                <Property Name="functionalarea_copa" Type="Edm.String" Nullable="false" MaxLength="16"/>
+                <Property Name="salesorder_copa" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="salesorderitem_copa" Type="Edm.String" Nullable="false" MaxLength="6"/>
+                <Property Name="plant_copa" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="costcenter_copa" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="profitcenter_copa" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="customer" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="duecalculationbasedate" Type="Edm.Date"/>
+                <Property Name="cashdiscount1days" Type="Edm.Decimal" Nullable="false" Precision="3"/>
+                <Property Name="cashdiscount1percent" Type="Edm.Decimal" Nullable="false" Precision="5" Scale="3"/>
+                <Property Name="cashdiscount2days" Type="Edm.Decimal" Nullable="false" Precision="3"/>
+                <Property Name="cashdiscount2percent" Type="Edm.Decimal" Nullable="false" Precision="5" Scale="3"/>
+                <Property Name="paymentterms" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="paymentmethod" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="paymentblockingreason" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="statecentralbankpaymentreason" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="specialglcode" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="supplier" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="bpbankaccountinternalid" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="name_onetime" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="name3_onetime" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="cityname_onetime" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="bankcountry_onetime" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="bankaccount_onetime" Type="Edm.String" Nullable="false" MaxLength="18"/>
+                <Property Name="bankcontrolkey_onetime" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="banknumber_onetime" Type="Edm.String" Nullable="false" MaxLength="15"/>
+                <Property Name="datamediumexchangekey_onetime" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="languageisocode_onetime" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="withholdingtaxtype" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="withholdingtaxcode" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="withholdingtaxbaseamount" Type="Edm.Decimal" Nullable="false" Precision="23" Scale="variable"/>
+                <Property Name="withholdingtaxamount" Type="Edm.Decimal" Nullable="false" Precision="23" Scale="variable"/>
+                <Property Name="Item_Created_By" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="Item_Created_At" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="Item_Last_Changed_By" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="Item_Last_Changed_At" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="DraftEntityCreationDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="DraftEntityLastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Type="com.sap.gateway.srvd.zui_c_journalentry.v0001.I_DraftAdministrativeDataType"/>
+                <NavigationProperty Name="SiblingEntity" Type="com.sap.gateway.srvd.zui_c_journalentry.v0001.ZC_JournalEntryItemType"/>
+                <NavigationProperty Name="_Header" Type="com.sap.gateway.srvd.zui_c_journalentry.v0001.ZC_JournalEntryType" Nullable="false" Partner="_Item">
+                    <ReferentialConstraint Property="Uuid" ReferencedProperty="Uuid"/>
+                </NavigationProperty>
+            </EntityType>
+            <ComplexType Name="ZC_JournalEntryCbAControl">
+                <Property Name="_Item" Type="Edm.Boolean" Nullable="false"/>
+            </ComplexType>
+            <ComplexType Name="ZC_JournalEntryOperationControl">
+                <Property Name="Edit" Type="Edm.Boolean" Nullable="false"/>
+            </ComplexType>
+            <ComplexType Name="ZI_FILE_ABS">
+                <Property Name="fileContent" Type="Edm.Binary" Nullable="false"/>
+                <Property Name="fileExtension" Type="Edm.String" Nullable="false"/>
+                <Property Name="fileName" Type="Edm.String" Nullable="false"/>
+                <Property Name="mimeType" Type="Edm.String" Nullable="false"/>
+            </ComplexType>
+            <ComplexType Name="SAP__Message">
+                <Property Name="code" Type="Edm.String" Nullable="false"/>
+                <Property Name="message" Type="Edm.String" Nullable="false"/>
+                <Property Name="target" Type="Edm.String"/>
+                <Property Name="additionalTargets" Type="Collection(Edm.String)" Nullable="false"/>
+                <Property Name="transition" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="numericSeverity" Type="Edm.Byte" Nullable="false"/>
+                <Property Name="longtextUrl" Type="Edm.String"/>
+            </ComplexType>
+            <Action Name="fileUpload" IsBound="true">
+                <Parameter Name="_it" Type="Collection(com.sap.gateway.srvd.zui_c_journalentry.v0001.ZC_JournalEntryType)" Nullable="false"/>
+                <Parameter Name="mimeType" Type="Edm.String" Nullable="false"/>
+                <Parameter Name="fileName" Type="Edm.String" Nullable="false"/>
+                <Parameter Name="fileContent" Type="Edm.Binary" Nullable="false"/>
+                <Parameter Name="fileExtension" Type="Edm.String" Nullable="false"/>
+            </Action>
+            <Action Name="Edit" EntitySetPath="_it" IsBound="true">
+                <Parameter Name="_it" Type="com.sap.gateway.srvd.zui_c_journalentry.v0001.ZC_JournalEntryType" Nullable="false"/>
+                <Parameter Name="PreserveChanges" Type="Edm.Boolean" Nullable="false"/>
+                <ReturnType Type="com.sap.gateway.srvd.zui_c_journalentry.v0001.ZC_JournalEntryType" Nullable="false"/>
+            </Action>
+            <Action Name="Resume" IsBound="true">
+                <Parameter Name="_it" Type="com.sap.gateway.srvd.zui_c_journalentry.v0001.ZC_JournalEntryType" Nullable="false"/>
+            </Action>
+            <Action Name="Activate" EntitySetPath="_it" IsBound="true">
+                <Parameter Name="_it" Type="com.sap.gateway.srvd.zui_c_journalentry.v0001.ZC_JournalEntryType" Nullable="false"/>
+                <ReturnType Type="com.sap.gateway.srvd.zui_c_journalentry.v0001.ZC_JournalEntryType" Nullable="false"/>
+            </Action>
+            <Action Name="Discard" IsBound="true">
+                <Parameter Name="_it" Type="com.sap.gateway.srvd.zui_c_journalentry.v0001.ZC_JournalEntryType" Nullable="false"/>
+            </Action>
+            <Action Name="downloadFile" IsBound="true">
+                <Parameter Name="_it" Type="Collection(com.sap.gateway.srvd.zui_c_journalentry.v0001.ZC_JournalEntryType)" Nullable="false"/>
+                <ReturnType Type="com.sap.gateway.srvd.zui_c_journalentry.v0001.ZI_FILE_ABS" Nullable="false"/>
+            </Action>
+            <Action Name="Prepare" IsBound="true">
+                <Parameter Name="_it" Type="com.sap.gateway.srvd.zui_c_journalentry.v0001.ZC_JournalEntryType" Nullable="false"/>
+            </Action>
+            <EntityContainer Name="Container">
+                <EntitySet Name="I_DraftAdministrativeData" EntityType="com.sap.gateway.srvd.zui_c_journalentry.v0001.I_DraftAdministrativeDataType"/>
+                <EntitySet Name="ZC_JournalEntry" EntityType="com.sap.gateway.srvd.zui_c_journalentry.v0001.ZC_JournalEntryType">
+                    <NavigationPropertyBinding Path="DraftAdministrativeData" Target="I_DraftAdministrativeData"/>
+                    <NavigationPropertyBinding Path="SiblingEntity" Target="ZC_JournalEntry"/>
+                    <NavigationPropertyBinding Path="_Item" Target="ZC_JournalEntryItem"/>
+                </EntitySet>
+                <EntitySet Name="ZC_JournalEntryItem" EntityType="com.sap.gateway.srvd.zui_c_journalentry.v0001.ZC_JournalEntryItemType">
+                    <NavigationPropertyBinding Path="DraftAdministrativeData" Target="I_DraftAdministrativeData"/>
+                    <NavigationPropertyBinding Path="SiblingEntity" Target="ZC_JournalEntryItem"/>
+                    <NavigationPropertyBinding Path="_Header" Target="ZC_JournalEntry"/>
+                </EntitySet>
+            </EntityContainer>
+            <Annotations Target="SAP__self.ZC_JournalEntryType/Uuid">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.Label" String="UUID"/>
+                <Annotation Term="SAP__common.QuickInfo" String="16 Byte UUID in 16 Bytes (Raw Format)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryType/companycode">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="会社コード"/>
+                <Annotation Term="SAP__common.Heading" String="会社"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=BUKRS"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryType/accountingdocument">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.SemanticObject" String="AccountingDocument"/>
+                <Annotation Term="SAP__common.Label" String="伝票番号"/>
+                <Annotation Term="SAP__common.QuickInfo" String="会計伝票番号"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=BELNR_D"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryType/documentreferenceid">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="参照伝票番号"/>
+                <Annotation Term="SAP__common.Heading" String="参照番号"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=XBLNR"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryType/postingfiscalperiod">
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+                <Annotation Term="SAP__common.Label" String="会計年度"/>
+                <Annotation Term="SAP__common.Heading" String="年度"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=GJAHR"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryType/accountingdocumenttype">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="伝票タイプ"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=BLART"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryType/currencycode">
+                <Annotation Term="SAP__common.IsCurrency"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/i_currency/0001;ps='srvd-zui_c_journalentry-0001';va='com.sap.gateway.srvd.zui_c_journalentry.v0001.et-zc_journalentry.currencycode'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Label" String="通貨コード"/>
+                <Annotation Term="SAP__common.Heading" String="通貨"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=WAERS"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryType/Created_By">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="登録者"/>
+                <Annotation Term="SAP__common.QuickInfo" String="登録者のユーザ"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=ABP_CREATION_USER"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryType">
+                <Annotation Term="SAP__common.CreatedBy" Path="Created_By"/>
+                <Annotation Term="SAP__common.CreatedAt" Path="Created_At"/>
+                <Annotation Term="SAP__common.ChangedBy" Path="Last_Changed_By"/>
+                <Annotation Term="SAP__common.ChangedAt" Path="Last_Changed_At"/>
+                <Annotation Term="SAP__common.Label" String="会計伝票ヘッダプロジェクションビュー"/>
+                <Annotation Term="SAP__UI.Facets">
+                    <Collection>
+                        <Record Type="SAP__UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Entry"/>
+                            <PropertyValue Property="ID" String="Header"/>
+                            <PropertyValue Property="Target" AnnotationPath="@SAP__UI.Identification"/>
+                        </Record>
+                        <Record Type="SAP__UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Items"/>
+                            <PropertyValue Property="ID" String="Items"/>
+                            <PropertyValue Property="Target" AnnotationPath="_Item/@SAP__UI.LineItem"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.Identification">
+                    <Collection>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="companycode"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="accountingdocumenttype"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="accountingdocument"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="currencycode"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="documentdate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="postingdate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="documentreferenceid"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="documentheadertext"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.LineItem">
+                    <Collection>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="companycode"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="accountingdocumenttype"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="accountingdocument"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="currencycode"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="documentdate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="postingdate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="documentreferenceid"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="documentheadertext"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>companycode</PropertyPath>
+                        <PropertyPath>accountingdocumenttype</PropertyPath>
+                        <PropertyPath>accountingdocument</PropertyPath>
+                        <PropertyPath>currencycode</PropertyPath>
+                        <PropertyPath>documentdate</PropertyPath>
+                        <PropertyPath>postingdate</PropertyPath>
+                        <PropertyPath>documentreferenceid</PropertyPath>
+                        <PropertyPath>documentheadertext</PropertyPath>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Messages" Path="SAP__Messages"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryType/Last_Changed_By">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="変更者"/>
+                <Annotation Term="SAP__common.QuickInfo" String="最終変更ユーザ"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=ABP_LASTCHANGE_USER"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryType/HasDraftEntity">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="ドラフトあり"/>
+                <Annotation Term="SAP__common.Heading" String="Draft あり"/>
+                <Annotation Term="SAP__common.QuickInfo" String="ドラフト - 区分 - ドラフト文書あり"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryType/DraftEntityCreationDateTime">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="ドラフト登録日付"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryType/DraftEntityLastChangeDateTime">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="ドラフト最終変更日付"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryType/HasActiveEntity">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="有効あり"/>
+                <Annotation Term="SAP__common.QuickInfo" String="ドラフト - 区分 - 有効文書あり"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryType/IsActiveEntity">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="有効"/>
+                <Annotation Term="SAP__common.QuickInfo" String="ドラフト - 区分 - 有効文書"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryType/__CreateByAssociationControl">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryType/__OperationControl">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryType/_Item">
+                <Annotation Term="SAP__common.Composition"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/ZC_JournalEntry">
+                <Annotation Term="SAP__capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="_Item"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Path="__CreateByAssociationControl/_Item"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__common.DraftRoot">
+                    <Record>
+                        <PropertyValue Property="EditAction" String="com.sap.gateway.srvd.zui_c_journalentry.v0001.Edit"/>
+                        <PropertyValue Property="ActivationAction" String="com.sap.gateway.srvd.zui_c_journalentry.v0001.Activate"/>
+                        <PropertyValue Property="DiscardAction" String="com.sap.gateway.srvd.zui_c_journalentry.v0001.Discard"/>
+                        <PropertyValue Property="PreparationAction" String="com.sap.gateway.srvd.zui_c_journalentry.v0001.Prepare"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="Filterable" Bool="true"/>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="DraftEntityCreationDateTime"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="DraftEntityLastChangeDateTime"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>__CreateByAssociationControl</PropertyPath>
+                                <PropertyPath>__OperationControl</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>__CreateByAssociationControl</PropertyPath>
+                                <PropertyPath>__OperationControl</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="NonUpdatableNavigationProperties">
+                            <Collection>
+                                <PropertyPath>DraftAdministrativeData</PropertyPath>
+                                <PropertyPath>SiblingEntity</PropertyPath>
+                                <PropertyPath>_Item</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.Edit(SAP__self.ZC_JournalEntryType)/PreserveChanges">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="TRUE"/>
+                <Annotation Term="SAP__common.QuickInfo" String="ドメイン BOOLE のデータエレメント: TRUE(='X')と FALSE(=' ')"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Edit(SAP__self.ZC_JournalEntryType)">
+                <Annotation Term="SAP__core.OperationAvailable" Path="_it/__OperationControl/Edit"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container">
+                <Annotation Term="SAP__CodeList.CurrencyCodes">
+                    <Record>
+                        <PropertyValue Property="Url" String="../../../../default/iwbep/common/0001/$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="Currencies"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__aggregation.ApplySupported">
+                    <Record>
+                        <PropertyValue Property="Transformations">
+                            <Collection>
+                                <String>aggregate</String>
+                                <String>groupby</String>
+                                <String>filter</String>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Rollup" EnumMember="SAP__aggregation.RollupType/None"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+                <Annotation Term="SAP__capabilities.FilterFunctions">
+                    <Collection>
+                        <String>eq</String>
+                        <String>ne</String>
+                        <String>gt</String>
+                        <String>ge</String>
+                        <String>lt</String>
+                        <String>le</String>
+                        <String>and</String>
+                        <String>or</String>
+                        <String>contains</String>
+                        <String>startswith</String>
+                        <String>endswith</String>
+                        <String>any</String>
+                        <String>all</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SupportedFormats">
+                    <Collection>
+                        <String>application/json</String>
+                        <String>application/pdf</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__PDF.Features">
+                    <Record>
+                        <PropertyValue Property="DocumentDescriptionReference" String="../../../../default/iwbep/common/0001/$metadata"/>
+                        <PropertyValue Property="DocumentDescriptionCollection" String="MyDocumentDescriptions"/>
+                        <PropertyValue Property="ArchiveFormat" Bool="true"/>
+                        <PropertyValue Property="Border" Bool="true"/>
+                        <PropertyValue Property="CoverPage" Bool="true"/>
+                        <PropertyValue Property="FitToPage" Bool="true"/>
+                        <PropertyValue Property="FontName" Bool="true"/>
+                        <PropertyValue Property="FontSize" Bool="true"/>
+                        <PropertyValue Property="Margin" Bool="true"/>
+                        <PropertyValue Property="Padding" Bool="true"/>
+                        <PropertyValue Property="Signature" Bool="true"/>
+                        <PropertyValue Property="HeaderFooter" Bool="true"/>
+                        <PropertyValue Property="ResultSizeDefault" Int="20000"/>
+                        <PropertyValue Property="ResultSizeMaximum" Int="20000"/>
+                        <PropertyValue Property="IANATimezoneFormat" Bool="true"/>
+                        <PropertyValue Property="Treeview" Bool="true"/>
+                        <PropertyValue Property="TextDirectionLayout" Bool="true"/>
+                        <PropertyValue Property="UploadToFileShare" Bool="true"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.KeyAsSegmentSupported"/>
+                <Annotation Term="SAP__capabilities.AsynchronousRequestsSupported"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/DraftEntityType">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="ドラフト Entity ID"/>
+                <Annotation Term="SAP__common.QuickInfo" String="ドラフトエンティティ ID"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/CreatedByUser">
+                <Annotation Term="SAP__common.Text" Path="CreatedByUserDescription"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/i_draftadministrativeuservh/0001;ps='srvd-zui_c_journalentry-0001';va='com.sap.gateway.srvd.zui_c_journalentry.v0001.et-i_draftadministrativedata.createdbyuser'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Label" String="ドラフト登録者"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/LastChangedByUser">
+                <Annotation Term="SAP__common.Text" Path="LastChangedByUserDescription"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/i_draftadministrativeuservh/0001;ps='srvd-zui_c_journalentry-0001';va='com.sap.gateway.srvd.zui_c_journalentry.v0001.et-i_draftadministrativedata.lastchangedbyuser'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Label" String="ドラフト最終変更者"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/DraftAccessType">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="ドラフトアクセスタイプ"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/InProcessByUser">
+                <Annotation Term="SAP__common.Text" Path="InProcessByUserDescription"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="ドラフト処理中ユーザ"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType">
+                <Annotation Term="SAP__common.Label" String="ドラフト管理データ"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/I_DraftAdministrativeData">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="true"/>
+                        <PropertyValue Property="UnsupportedExpressions" EnumMember="SAP__capabilities.SearchExpressions/AND SAP__capabilities.SearchExpressions/OR SAP__capabilities.SearchExpressions/NOT SAP__capabilities.SearchExpressions/group SAP__capabilities.SearchExpressions/phrase"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="Filterable" Bool="true"/>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="CreationDateTime"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="LastChangeDateTime"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/Uuid">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.Label" String="UUID"/>
+                <Annotation Term="SAP__common.QuickInfo" String="16 Byte UUID in 16 Bytes (Raw Format)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/referencedocumentitem">
+                <Annotation Term="SAP__core.Immutable"/>
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+                <Annotation Term="SAP__common.Label" String="明細"/>
+                <Annotation Term="SAP__common.Heading" String="It"/>
+                <Annotation Term="SAP__common.QuickInfo" String="会計伝票内の明細番号"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=BUZEI"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/glaccount">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="G/L 勘定"/>
+                <Annotation Term="SAP__common.Heading" String="G/L"/>
+                <Annotation Term="SAP__common.QuickInfo" String="総勘定元帳勘定"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=HKONT"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/amountintransactioncurrency">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="currencyCode"/>
+                <Annotation Term="SAP__common.Label" String="取引通貨額"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/taxamount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="currencyCode"/>
+                <Annotation Term="SAP__common.Label" String="税額"/>
+                <Annotation Term="SAP__common.QuickInfo" String="伝票通貨税額"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=WMWST"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/currencyCode">
+                <Annotation Term="SAP__common.IsCurrency"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="通貨コード"/>
+                <Annotation Term="SAP__common.Heading" String="通貨"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=WAERS"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/taxcode">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="税コード"/>
+                <Annotation Term="SAP__common.Heading" String="税"/>
+                <Annotation Term="SAP__common.QuickInfo" String="消費税コード"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=MWSKZ"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/costcenter">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="原価センタ"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=KOSTL"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/profitcenter">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="利益センタ"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=PRCTR"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/orderid">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="指図"/>
+                <Annotation Term="SAP__common.QuickInfo" String="指図番号"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=AUFNR"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/segment">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="セグメント"/>
+                <Annotation Term="SAP__common.QuickInfo" String="セグメントレポートのセグメント"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/functionalarea">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="機能領域"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=FKBER"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/personnelnumber">
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+                <Annotation Term="SAP__common.Label" String="従業員番号"/>
+                <Annotation Term="SAP__common.Heading" String="従業員No"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=PERNR_D"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/housebank">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="取引銀行"/>
+                <Annotation Term="SAP__common.Heading" String="銀行ID"/>
+                <Annotation Term="SAP__common.QuickInfo" String="取引銀行のショートキー"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=HBKID"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/housebankaccount">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="口座 ID"/>
+                <Annotation Term="SAP__common.QuickInfo" String="口座 ID 詳細"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=HKTID"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/reference1idbybusinesspartner">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="参照キー 1"/>
+                <Annotation Term="SAP__common.QuickInfo" String="ビジネスパートナ参照キー"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=XREF1"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/reference2idbybusinesspartner">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="参照キー 2"/>
+                <Annotation Term="SAP__common.QuickInfo" String="ビジネスパートナ参照キー"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=XREF2"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/reference3idbybusinesspartner">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="参照キー 3"/>
+                <Annotation Term="SAP__common.QuickInfo" String="明細の参照キー"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=XREF3"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/customer_copa">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="得意先コード"/>
+                <Annotation Term="SAP__common.Heading" String="得意先"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=KUNNR"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/customerindustry_copa">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="産業分類"/>
+                <Annotation Term="SAP__common.Heading" String="産業"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=BRSCH"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/customercountry_copa">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="国/地域キー"/>
+                <Annotation Term="SAP__common.Heading" String="C/R"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=LAND1"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/soldmaterial_copa">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="品目"/>
+                <Annotation Term="SAP__common.QuickInfo" String="品目コード"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=MATNR"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/soldmaterialgroup_copa">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="品目グループ"/>
+                <Annotation Term="SAP__common.Heading" String="品目 Group"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=MATKL"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/salesorganization_copa">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="販売組織"/>
+                <Annotation Term="SAP__common.Heading" String="販組"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=VKORG"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/distributionchannel_copa">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="製品部門"/>
+                <Annotation Term="SAP__common.Heading" String="部"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=SPART"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/functionalarea_copa">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="機能領域"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=FKBER"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/salesorder_copa">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="販売伝票"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=VBELN_VA"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/salesorderitem_copa">
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+                <Annotation Term="SAP__common.Label" String="販売伝票明細"/>
+                <Annotation Term="SAP__common.Heading" String="明細"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=POSNR_VA"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/plant_copa">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="プラント"/>
+                <Annotation Term="SAP__common.Heading" String="Plnt"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=WERKS_D"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/costcenter_copa">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="原価センタ"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=KOSTL"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/profitcenter_copa">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="利益センタ"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=PRCTR"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/customer">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="得意先コード"/>
+                <Annotation Term="SAP__common.Heading" String="得意先"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=KUNNR"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/paymentterms">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="支払条件"/>
+                <Annotation Term="SAP__common.QuickInfo" String="支払条件キー"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=DZTERM"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/paymentmethod">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="支払方法"/>
+                <Annotation Term="SAP__common.Heading" String="PM"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=DZLSCH"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/paymentblockingreason">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="支払保留"/>
+                <Annotation Term="SAP__common.Heading" String="PBk"/>
+                <Annotation Term="SAP__common.QuickInfo" String="支払保留キー"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=DZLSPR"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/statecentralbankpaymentreason">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="中央銀行"/>
+                <Annotation Term="SAP__common.Heading" String="銀行Cd"/>
+                <Annotation Term="SAP__common.QuickInfo" String="中央銀行コード"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=LZBKZ"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/supplier">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="仕入先コード"/>
+                <Annotation Term="SAP__common.Heading" String="仕入先"/>
+                <Annotation Term="SAP__common.QuickInfo" String="仕入先または債権者の勘定コード"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=LIFNR"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/bpbankaccountinternalid">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="取引先銀行タイプ"/>
+                <Annotation Term="SAP__common.Heading" String="BnkT"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=BVTYP"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/bankcountry_onetime">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="銀行の国/地域"/>
+                <Annotation Term="SAP__common.Heading" String="C/R"/>
+                <Annotation Term="SAP__common.QuickInfo" String="銀行国/地域コード"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=BANKS"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/bankaccount_onetime">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="口座番号"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=BANKN"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/bankcontrolkey_onetime">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="預金種別"/>
+                <Annotation Term="SAP__common.Heading" String="CK"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=BKONT"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/banknumber_onetime">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="銀行番号"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=BANKL"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/datamediumexchangekey_onetime">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="手数料負担コード"/>
+                <Annotation Term="SAP__common.Heading" String="IK"/>
+                <Annotation Term="SAP__common.QuickInfo" String="銀行手数料負担コード"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=DTAWS"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/languageisocode_onetime">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="言語コード"/>
+                <Annotation Term="SAP__common.Heading" String="LngCode"/>
+                <Annotation Term="SAP__common.QuickInfo" String="2 桁の SAP 言語コード"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/withholdingtaxbaseamount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="currencyCode"/>
+                <Annotation Term="SAP__common.Label" String="取引通貨額"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/withholdingtaxamount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="currencyCode"/>
+                <Annotation Term="SAP__common.Label" String="税額"/>
+                <Annotation Term="SAP__common.QuickInfo" String="伝票通貨税額"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=WMWST"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/Item_Created_By">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="登録者"/>
+                <Annotation Term="SAP__common.QuickInfo" String="登録者のユーザ"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=ABP_CREATION_USER"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType">
+                <Annotation Term="SAP__common.CreatedBy" Path="Item_Created_By"/>
+                <Annotation Term="SAP__common.CreatedAt" Path="Item_Created_At"/>
+                <Annotation Term="SAP__common.ChangedBy" Path="Item_Last_Changed_By"/>
+                <Annotation Term="SAP__common.Label" String="会計伝票明細プロジェクションビュー"/>
+                <Annotation Term="SAP__UI.Facets">
+                    <Collection>
+                        <Record Type="SAP__UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Item"/>
+                            <PropertyValue Property="ID" String="Item"/>
+                            <PropertyValue Property="Target" AnnotationPath="@SAP__UI.Identification"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.Identification">
+                    <Collection>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="referencedocumentitem"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="documentitemtext"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="amountintransactioncurrency"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="glaccount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="costcenter"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="profitcenter"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.LineItem">
+                    <Collection>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="referencedocumentitem"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="documentitemtext"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="amountintransactioncurrency"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="glaccount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="costcenter"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="profitcenter"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/Item_Last_Changed_By">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="変更者"/>
+                <Annotation Term="SAP__common.QuickInfo" String="最終変更ユーザ"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=ABP_LASTCHANGE_USER"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/HasDraftEntity">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="ドラフトあり"/>
+                <Annotation Term="SAP__common.Heading" String="Draft あり"/>
+                <Annotation Term="SAP__common.QuickInfo" String="ドラフト - 区分 - ドラフト文書あり"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/DraftEntityCreationDateTime">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="ドラフト登録日付"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/DraftEntityLastChangeDateTime">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="ドラフト最終変更日付"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/HasActiveEntity">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="有効あり"/>
+                <Annotation Term="SAP__common.QuickInfo" String="ドラフト - 区分 - 有効文書あり"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/IsActiveEntity">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="有効"/>
+                <Annotation Term="SAP__common.QuickInfo" String="ドラフト - 区分 - 有効文書"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/ZC_JournalEntryItem">
+                <Annotation Term="SAP__capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="_Header"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__common.DraftNode"/>
+                <Annotation Term="SAP__common.DraftActivationVia">
+                    <Collection>
+                        <String>SAP__self.Container/ZC_JournalEntry</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="Filterable" Bool="true"/>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="DraftEntityCreationDateTime"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="DraftEntityLastChangeDateTime"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="RequiredProperties">
+                            <Collection>
+                                <PropertyPath>referencedocumentitem</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="NonUpdatableNavigationProperties">
+                            <Collection>
+                                <PropertyPath>DraftAdministrativeData</PropertyPath>
+                                <PropertyPath>SiblingEntity</PropertyPath>
+                                <PropertyPath>_Header</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/DraftUUID">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="ドラフト (技術 ID)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/ProcessingStartDateTime">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="ドラフト処理開始日時"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/DraftIsKeptByUser">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="ドラフト保持ユーザ"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/EnqueueStartDateTime">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="ドラフトロック開始日時"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/DraftIsCreatedByMe">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="自分が登録したドラフト"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/DraftIsLastChangedByMe">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="自分が最終変更したドラフト"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/DraftIsProcessedByMe">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="自分が処理中のドラフト"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/CreatedByUserDescription">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="ドラフト登録者 (内容説明)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/LastChangedByUserDescription">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="ドラフト最終変更者 (内容説明)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/InProcessByUserDescription">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="ドラフト処理中ユーザ (内容説明)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryType/ledgergroup">
+                <Annotation Term="SAP__common.Label" String="元帳グループ"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryType/documentheadertext">
+                <Annotation Term="SAP__common.Label" String="伝票ヘッダテキスト"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=BKTXT"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryType/documentdate">
+                <Annotation Term="SAP__common.Label" String="伝票日付"/>
+                <Annotation Term="SAP__common.QuickInfo" String="伝票の伝票日付"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=BLDAT"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryType/postingdate">
+                <Annotation Term="SAP__common.Label" String="転記日付"/>
+                <Annotation Term="SAP__common.QuickInfo" String="伝票の転記日付"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=BUDAT"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryType/exchangeratedate">
+                <Annotation Term="SAP__common.Label" String="換算日付"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=WWERT_D"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryType/exchangerate">
+                <Annotation Term="SAP__common.Label" String="換算レート"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryType/Created_At">
+                <Annotation Term="SAP__common.Label" String="登録日付"/>
+                <Annotation Term="SAP__common.QuickInfo" String="登録日時"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=ABP_CREATION_TSTMPL"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryType/Last_Changed_At">
+                <Annotation Term="SAP__common.Label" String="変更日付"/>
+                <Annotation Term="SAP__common.QuickInfo" String="最終変更日時"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=ABP_LASTCHANGE_TSTMPL"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryType/Local_Last_Changed_At">
+                <Annotation Term="SAP__common.Label" String="変更日付"/>
+                <Annotation Term="SAP__common.QuickInfo" String="ローカルインスタンスの最終変更日時"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=ABP_LOCINST_LASTCHANGE_TSTMPL"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryType/__CreateByAssociationControl/_Item">
+                <Annotation Term="SAP__common.Label" String="Dynamic CbA-Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Create by Association Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Create via Association Control Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryType/__OperationControl/Edit">
+                <Annotation Term="SAP__common.Label" String="Dyn. Action Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Action Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Action Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/CreationDateTime">
+                <Annotation Term="SAP__common.Label" String="ドラフト登録日付"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/LastChangeDateTime">
+                <Annotation Term="SAP__common.Label" String="ドラフト最終変更日付"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/documentitemtext">
+                <Annotation Term="SAP__common.Label" String="テキスト"/>
+                <Annotation Term="SAP__common.QuickInfo" String="明細テキスト"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=SGTXT"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/assignmentreference">
+                <Annotation Term="SAP__common.Label" String="ソートキー"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=DZUONR"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/valuedate">
+                <Annotation Term="SAP__common.Label" String="起算日"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=VALUT"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/wbselement">
+                <Annotation Term="SAP__common.Label" String="WBS要素"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/customergroup_copa">
+                <Annotation Term="SAP__common.Label" String="得意先グループ"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/salesdistrict_copa">
+                <Annotation Term="SAP__common.Label" String="販売地域"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/wbselement_copa">
+                <Annotation Term="SAP__common.Label" String="WBS要素"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/duecalculationbasedate">
+                <Annotation Term="SAP__common.Label" String="日付"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=DATUM"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/cashdiscount1days">
+                <Annotation Term="SAP__common.Label" String="日数 1"/>
+                <Annotation Term="SAP__common.Heading" String="Day1"/>
+                <Annotation Term="SAP__common.QuickInfo" String="現金割引期間 1"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=DZBD1T"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/cashdiscount1percent">
+                <Annotation Term="SAP__common.Label" String="現金割引率 1"/>
+                <Annotation Term="SAP__common.Heading" String="割引 1"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=DZBD1P"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/cashdiscount2days">
+                <Annotation Term="SAP__common.Label" String="日数 2"/>
+                <Annotation Term="SAP__common.Heading" String="Day2"/>
+                <Annotation Term="SAP__common.QuickInfo" String="現金割引期間 2"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=DZBD2T"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/cashdiscount2percent">
+                <Annotation Term="SAP__common.Label" String="現金割引率 2"/>
+                <Annotation Term="SAP__common.Heading" String="割引 2"/>
+                <Annotation Term="SAP__common.QuickInfo" String="割引率 2"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=DZBD2P"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/specialglcode">
+                <Annotation Term="SAP__common.Label" String="特殊仕訳コード"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/name_onetime">
+                <Annotation Term="SAP__common.Label" String="名称"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=NAME1_GP"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/name3_onetime">
+                <Annotation Term="SAP__common.Label" String="名称 3"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=NAME3_GP"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/cityname_onetime">
+                <Annotation Term="SAP__common.Label" String="市区町村"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/withholdingtaxtype">
+                <Annotation Term="SAP__common.Label" String="源泉徴収税タイプ"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/withholdingtaxcode">
+                <Annotation Term="SAP__common.Label" String="源泉徴収税コード"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/Item_Created_At">
+                <Annotation Term="SAP__common.Label" String="登録日付"/>
+                <Annotation Term="SAP__common.QuickInfo" String="登録日時"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=ABP_CREATION_TSTMPL"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryItemType/Item_Last_Changed_At">
+                <Annotation Term="SAP__common.Label" String="変更日付"/>
+                <Annotation Term="SAP__common.QuickInfo" String="最終変更日時"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=ABP_LASTCHANGE_TSTMPL"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryCbAControl/_Item">
+                <Annotation Term="SAP__common.Label" String="Dynamic CbA-Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Create by Association Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Create via Association Control Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_JournalEntryOperationControl/Edit">
+                <Annotation Term="SAP__common.Label" String="Dyn. Action Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Action Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Action Property"/>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
